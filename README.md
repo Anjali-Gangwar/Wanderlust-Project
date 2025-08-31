@@ -2,6 +2,7 @@
 WanderLust is a full-stack web application for browsing and booking vacation accommodations like houses, villas, and farmhouses. Users can also list their own properties, book rentals, view locations on Mapbox, and log in via Google or GitHub.
 
 🚀 Features
+
 Property listing & booking system
 User authentication (Google & GitHub OAuth)
 Image upload with Cloudinary

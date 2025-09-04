@@ -1,5 +1,5 @@
 {
-  "engines":{
+  "engines": {
     "node": "22.14.0"
   },
   "name": "majorproject",
@@ -21,12 +21,13 @@
     "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
     "ejs-mate": "^4.0.0",
-    "express": "^4.20.0",
-    "express-session": "^1.18.1",
+    "express": "^4.21.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.18.2",
     "i": "^0.3.7",
     "joi": "^17.13.3",
     "method-override": "^3.0.0",
-    "mongoose": "^8.13.2",
+    "mongoose": "^8.18.0",
     "multer": "^1.4.5-lts.2",
     "multer-cloud-storage": "^4.0.0",
     "multer-storage-cloudinary": "^4.0.0",

@@ -104,9 +104,16 @@ body {
  } 
  
  /* Show Page */
- .show-image{
+ /* .show-image{
     height: 30vh;
- }
+ } */
+
+ .show-image {
+    width: 100% !important;
+    height: auto; 
+    max-height: 60vh; /* optional, bahut bada na ho */
+    object-fit: contain; /* pura image fit ho bina crop */
+}
 
  .btns {
     display: flex;
@@ -121,4 +128,7 @@ body {
  #map{
     height: 400px;
     width: 80vh;
+    border-radius: 10px;
  }
+
+

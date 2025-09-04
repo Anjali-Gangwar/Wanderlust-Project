@@ -1,5 +1,5 @@
-const Listing = require("../models/listing.js");
-const mbxGeocoding = require('@mapbox/mapbox-sdk/services/Geocoding');
+ const Listing = require("../models/listing.js");
+const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
 const mapToken = process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
@@ -58,7 +58,7 @@ module.exports.renderEditForm = async (req,res) => {
     }
     let originalImageUrl = listing.image.url;
     originalImageUrl = originalImageUrl.replace("/upload", "/upload/h_150,w_250");
-    res.render("listings/edit.ejs",{listing, originalImageUrl});
+    res.render("listings/edit.ejs",{listing,originalImageUrl});
 };
 
 module.exports.updateListing = async (req,res) => {
@@ -68,7 +68,7 @@ module.exports.updateListing = async (req,res) => {
     let {id} = req.params ;
     let listing = await Listing.findByIdAndUpdate(id,{...req.body.listing});
 
-    if(typeof req.body !== "undefined"){
+    if(typeof req.file !== "undefined"){
     let url = req.file.path;
     let filename = req.file.filename;
     listing.image = {url, filename};
@@ -85,4 +85,4 @@ module.exports.destroyListing= async (req,res) => {
     console.log(deletedListing);
     req.flash("success","Listing deleted");
     res.redirect("/listings");
-};
+};  

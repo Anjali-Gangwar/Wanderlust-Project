@@ -1,8 +1,11 @@
-<% layout("/layouts/boilerplate") %>
+
+
 <script>
   const mapToken = "<%= process.env.MAP_TOKEN %>";
   const listing = <%- JSON.stringify(listing) %>;
 </script>
+
+
 <div class="row mt-3">
     <div class="col-8 offset-3">
     <h3><%= listing.title %></h3>
@@ -25,13 +28,14 @@
 
 </div>
 <% if(currentUser && listing.owner._id.equals(currentUser._id)) { %>
-<div class="btns">
-<a href="/listings/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-3 edit-btn">Edit</a>
-</div>
+<div class="d-flex justify-content-center gap-3 mb-3">
+<a href="/listings/<%= listing._id %>/edit" class="btn btn-dark edit-btn px-4">Edit</a>
+
 
 <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
-      <button class="btn btn-dark col-1 offset-5">Delete</button>
+      <button class="btn btn-dark px-4">Delete</button>
 </form>
+</div>
 <% } %>
 
 
@@ -98,10 +102,13 @@
 </div>
 <div class="col-6 offset-3 mb-3">
   <h3>Where You'll be</h3>
-  <div id="map">
+  <div id="map" style="width:80vh; height:400px;">
     
   </div>
 </div>
 </div>
+<script>
+  console.log("Coordinates from DB:", listing.geometry);
+</script>
 
 <script src="/js/map.js"></script>

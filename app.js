@@ -15,12 +15,15 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
+require("dotenv").config();
  
 
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
-
+const expressLayouts = require("express-ejs-layouts");
+app.use(expressLayouts);
+app.set("layout", "layouts/boilerplate");
 
 const dbUrl = process.env.ATLASDB_URL;
 
@@ -31,6 +34,7 @@ main().then(() => {
 async function main() {
   await mongoose.connect(dbUrl);
 }
+
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -47,7 +51,7 @@ const store = MongoStore.create({
     touchAfter: 24*3600,
 });
 
-store.on("error", ()=> {
+store.on("error", (err)=> {
     console.log("ERROR IN MONGO STORE SESSION ", err);
 });
 

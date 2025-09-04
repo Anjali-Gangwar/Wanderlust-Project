@@ -1,18 +1,6 @@
 const sampleListings = [
     
     {
-      title: "Modern Loft in Downtown",
-      description:
-        "Stay in the heart of the city in this stylish loft apartment. Perfect for urban explorers!",
-      image: {
-        filename: "listingimage",
-        url: "https://plus.unsplash.com/premium_photo-1664303947767-b2c089e84306?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZWxlY3RyaWNhbCUyMHdpcmluZ3xlbnwwfHwwfHx8MA%3D%3D",
-      },
-      price: 1200,
-      location: "New York City",
-      country: "United States",
-    },
-    {
       title: "Mountain Retreat",
       description:
         "Unplug and unwind in this peaceful mountain cabin. Surrounded by nature, it's a perfect place to recharge.",
